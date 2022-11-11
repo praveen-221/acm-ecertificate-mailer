@@ -1,0 +1,9 @@
+/node_modules
+*.log
+/pdfs/*
+/userdata/*
+/logs/*
+reg.json
+reg.csv
+/.env
+/receivers.json
