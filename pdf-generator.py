@@ -22,10 +22,10 @@ def make_certificate(id, name, school):
 # users = ["Elon", "Jeff", "Gates", "Praveen"]
 # school = ["PSBB", "ST.Johns public school, chennai", "VBC", "St. Johns Public School, Chennai"]
 
-users = pd.read_excel("./registry/AU prodigy vbc trichy.xlsx")
-name = users['Name']
-id = users['ID']
-scl = users['School']
+users = pd.read_excel("./registry/Students Certificate List.xlsx")
+name = users['name']
+id = users['id']
+scl = users['school']
 for i in range(0,len(users)):
     make_certificate(id[i], name[i], scl[i])
 print("\nPDF Generation successful\n")
