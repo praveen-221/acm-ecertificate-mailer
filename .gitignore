@@ -6,7 +6,7 @@
 reg.json
 reg.csv
 /.env
-# /receivers.json
-# /E-certificates
+/receivers.json
+/E-certificates
 /template*
 /registry

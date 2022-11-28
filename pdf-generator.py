@@ -6,8 +6,6 @@ from datetime import datetime
 import pandas as pd
 
 def make_certificate(id, name, school):
-    # name = "Praveen Kumar"
-    # school = "SRV Boys Higher secondary school"
     file_name = 'E-certificates//' + name + '_' + str(id) + '.pdf'
     img = 'template.jpeg'    # add template here - It shoud be a png/jpg file
     c = canvas.Canvas(file_name, pagesize=landscape(A4))
@@ -19,8 +17,6 @@ def make_certificate(id, name, school):
     c.save()
     print('\n[#] PDF Generated : '+name)
 
-# users = ["Elon", "Jeff", "Gates", "Praveen"]
-# school = ["PSBB", "ST.Johns public school, chennai", "VBC", "St. Johns Public School, Chennai"]
 
 users = pd.read_excel("./registry/Students Certificate List.xlsx")
 name = users['name']

@@ -56,7 +56,7 @@ const Send = (receiver) => {
 // Send();
 receivers.forEach((element, index)=> {
     if(element.email != ""){
-        if(element.id > 400 && element.id <= 450){
+        if(element.id > 850 && element.id <= 912){
             setTimeout(()=>{
                 Send(element);
             }, index * 5000);
@@ -66,6 +66,3 @@ receivers.forEach((element, index)=> {
 
 // console.log("Successfully completed");
 // console.log(`Total Email sent: ${cnt}`);
-
-//acmceg.prodigy@gmail.com
-//erppogzmittqclto
