@@ -30,13 +30,13 @@ const transport = nodemailer.createTransport({
 const Send = (receiver) => {
     const options = {
         from: process.env.USER,
-        to: receiver.email,
+        to: receiver.EMAIL,
         subject: "Prodigy Participation Certificate",
-        text: "Hello, "+receiver.name+",\nGreetings from ACM-CEG! \n\n\tA hearty congratulations to the students who participated in the events! We hope you enjoyed and had fun participating. \nWe would be elated to have you next year too for our next edition of Prodigy. Thank you for your support and participation towards making this event a grand success \n\n\tKindly let us know your feedback and suggestions to make Prodigy better in the future.\nFeedback form: https://forms.gle/zWhZ6dQHFW3TXE9j6 \n\n\nWarm regards,\nACM-CEG.",
+        text: "Hello, "+receiver.NAME+",\nGreetings from ACM-CEG! \n\n\tA hearty congratulations for securing "+ receiver.PRIZE +" in "+ receiver.EVENT +" ! We hope you enjoyed and had fun participating. \nWe would be elated to have you next year too for our next edition of Prodigy. Thank you for your support and participation towards making this event a grand success \n\n\tKindly let us know your feedback and suggestions to make Prodigy better in the future.\nFeedback form: https://forms.gle/zWhZ6dQHFW3TXE9j6 \n\n\nWarm regards,\nACM-CEG.",
         attachments : [
 			{
-                filename: receiver.name+'_'+receiver.id+'.pdf',
-                path: __dirname+'/E-certificates/'+ receiver.name+'_'+receiver.id+'.pdf'
+                filename: receiver.NAME+'_'+receiver.ID+'.pdf',
+                path: __dirname+'/E-certificates/'+ receiver.NAME+'_'+receiver.ID+'.pdf'
 			}
 		]
     };
@@ -46,7 +46,7 @@ const Send = (receiver) => {
         if(err){
             console.log(err);
         } else {
-            console.log(`Mail sent to ${receiver.name} with Id ${receiver.id}`);
+            console.log(`Mail sent to ${receiver.NAME} with Id ${receiver.ID}`);
             cnt += 1;
         }
     });
@@ -55,8 +55,8 @@ const Send = (receiver) => {
 
 // Send();
 receivers.forEach((element, index)=> {
-    if(element.email != ""){
-        if(element.id > 850 && element.id <= 912){
+    if(element.EMAIL != ""){
+        if(element.ID > 0 && element.ID <= 37){
             setTimeout(()=>{
                 Send(element);
             }, index * 5000);

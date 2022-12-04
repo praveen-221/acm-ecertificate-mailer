@@ -8,5 +8,5 @@ reg.csv
 /.env
 /receivers.json
 /E-certificates
-/template*
+/*template*
 /registry
